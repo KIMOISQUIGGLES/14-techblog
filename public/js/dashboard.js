@@ -59,7 +59,6 @@ document.querySelectorAll(".update").forEach((updateBtn)=>{
             console.log(res)
             if(res.ok){
                console.log("UPDATED")
-            //    location.reload()
             } else {
                 alert("trumpet sound")
             }

@@ -20,17 +20,17 @@ const blogs = [
   {
     title: 'This is what it is like to be Tyler',
     body: 'He is not as cool as the Cool Tyler',
-    UserId: 1
+    userId: 1
   },
   {
     title: 'Poo poo',
     body: 'Poo poo',
-    UserId: 1
+    userId: 1
   },
   {
     title: 'The Cool Tyler kinda sucks',
     body: 'no futher comment',
-    UserId: 2
+    userId: 2
   },
 ]
 

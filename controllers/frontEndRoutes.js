@@ -41,17 +41,22 @@ router.get("/login",(req,res)=>{
     res.render("home")
 })
 
-router.get("/dashboard",(req,res)=>{
-    if(!req.session.user){
+router.get("/dashboard", (req, res) => {
+    if (!req.session.userId) {
         return res.redirect("/")
     }
-    User.findByPk(req.session.user.id,{
-        include:[Blog]
-    }).then(userData=>{
-        const hbsData = userData.get({plain:true})
-        hbsData.loggedIn = req.session.user?true:false
-        res.render("dashboard",hbsData)
-    })
+    Blog.findAll({
+        where: {
+            userId: req.session.userId
+        }
+    }).then(dbPostData => {
+        const blogs = dbPostData.map((post) => post.get({plain: true}));
+
+        res.render("dashboard",blogs)
+    }).catch(err => {
+        console.log(err);
+        res.redirect("login");
+    });
 })
 
 module.exports = router;
