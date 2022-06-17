@@ -52,4 +52,4 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 
 [GitHub](https://github.com/KIMOISQUIGGLES/14-techblog)
 
-[App]()
+[App](https://superdupertechblogassignment.herokuapp.com/)
