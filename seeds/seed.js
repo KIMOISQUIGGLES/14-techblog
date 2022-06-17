@@ -1,25 +1,50 @@
 const sequelize = require('../config/connection');
-const { User, Project } = require('../models');
+const { User, Blog } = require('../models');
 
-const userData = require('./userData.json');
-const projectData = require('./projectData.json');
-
-const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
-
-  const users = await User.bulkCreate(userData, {
-    individualHooks: true,
-    returning: true,
-  });
-
-  for (const project of projectData) {
-    await Project.create({
-      ...project,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-    });
+const users = [
+  {
+    username: 'Tyler',
+    password: 'asdf'
+  },
+  {
+    username: 'TheCoolerTyler',
+    password: 'thecoolerasdf'
+  },
+  {
+    username: 'TheNotCoolTyler',
+    password: 'thenotcoolasdf'
   }
+]
 
-  process.exit(0);
-};
+const blogs = [
+  {
+    title: 'This is what it is like to be Tyler',
+    body: 'He is not as cool as the Cool Tyler',
+    UserId: 1
+  },
+  {
+    title: 'Poo poo',
+    body: 'Poo poo',
+    UserId: 1
+  },
+  {
+    title: 'The Cool Tyler kinda sucks',
+    body: 'no futher comment',
+    UserId: 2
+  },
+]
 
-seedDatabase();
+const createBlogs = async ()=>{
+  try{
+      await sequelize.sync({force:true})
+      await User.bulkCreate(users,{
+          individualHooks:true
+      });
+      await Blog.bulkCreate(blogs);
+      process.exit(0);
+  } catch(err){
+      console.log(err)
+  }
+}
+
+createBlogs()

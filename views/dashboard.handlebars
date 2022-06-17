@@ -1,0 +1,52 @@
+<form action="" id="newBlog">
+        <div>
+            <h3>
+                <div>
+                    <input type="text" placeholder="Blog Title" id="title">
+                </div>
+            </h3>
+            <div>
+                <textarea placeholder="Textarea" style="resize: none"
+                    id="body"></textarea>
+            </div>
+            <button>Submit</button>
+        </div>
+</form>
+
+<h1> YOUR BLOGS </h1>
+
+<ul>
+    {{#each Blogs}}
+    <li>
+        <div>
+            <h2>{{title}}</h2>
+            <hr>
+            <p style="word-wrap: break-word">{{body}}</p>
+            <hr>
+            <div>
+                <buttontype="button" style="margin-top: -1%"
+                    uk-toggle="target: #updateModal">Update</buttontype=>
+                <button class="uk-button uk-button-default delete" id={{id}}>Delete</button>
+            </div>
+            </form>
+            <div id="updateModal">
+                <div>
+                    <h2>{{this.title}}</h2>
+                    <p>{{body}}</p>
+                    <textarea type="text" id="updateText"
+                        style="resize: none"></textarea>
+                    
+                        <button id={{id}}>Save</button>
+                        <button>Cancel</button>
+                    
+                </div>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+
+</ul>
+
+
+
+<script src="/js/dashboard.js"></script>

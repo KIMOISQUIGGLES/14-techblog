@@ -1,0 +1,32 @@
+<div>
+    <h1>{{post.title}}</h1>
+    <p>{{post.body}}</p>
+    <h6>Created On: {{post.createdAt}}</h6>
+    <hr>
+</div>
+    <form style="margin-bottom: 50px">
+        <input type="hidden" name="blog-id" value="{{post.id}}" />
+        <input id="commentInput" />
+        <button type="submit" id="comment">comment</button>
+    </form>
+
+
+<ul>
+
+{{#if post.Comments}}
+{{#each post.Comments}}
+        <li>
+            <div>
+                <hr>
+                <h4 style="text-decoration: underline">UserId: #{{id}}</h4>
+                <p style="word-wrap: break-word; font-size: 30px" >{{commentBody}}</p>
+                <hr>
+                 <h6> Posted On: {{createdAt}}</h6>
+            </div>
+        </li>
+    {{/each}}
+{{/if}}
+</ul>
+
+
+<script src="/js/comment.js"></script>

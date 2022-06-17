@@ -1,0 +1,29 @@
+
+<ul>
+
+    {{#each blogs}}
+    <li>
+        <div>
+            <a href="/post/{{id}}">
+                <h3>{{title}}</h3>
+            </a>
+              <header>
+            <p style="word-wrap: break-word">{{body}}</p>
+            <hr>
+        </div>
+    </li>
+    {{/each}}
+
+    <div id="modal-example" uk-modal>
+        <div>
+            <form>
+                <h2>Headline</h2>
+                <input type="text">
+                <p>
+                    <button type="button">Cancel</button>
+                    <button type="button">Save</button>
+                </p>
+            </form>
+        </div>
+    </div>
+</ul>
