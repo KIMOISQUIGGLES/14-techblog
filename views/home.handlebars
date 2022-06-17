@@ -1,13 +1,18 @@
+<h1 class="uk-heading-line uk-text-center"><span
+        style="border: 1px solid; padding-left: 10px; padding-right: 10px; padding-bottom: 20px; padding-top: 20px">Welcome
+        to Blog-I.T!</span></h1>
 
-<ul>
+
+<ul class="uk-grid-small  uk-child-width-1-1 uk-child-width-1-4@s" uk-sortable="handle: .uk-card" uk-grid
+    style="padding-left: 5% !important; padding-right: 5% !important">
 
     {{#each blogs}}
     <li>
-        <div>
+        <div class="uk-card uk-card-default uk-card-body">
             <a href="/post/{{id}}">
-                <h3>{{title}}</h3>
+                <h3 class="uk-text-center">{{title}}</h3>
             </a>
-              <header>
+              <hr class="uk-divider-icon">
             <p style="word-wrap: break-word">{{body}}</p>
             <hr>
         </div>
@@ -15,13 +20,13 @@
     {{/each}}
 
     <div id="modal-example" uk-modal>
-        <div>
+        <div class="uk-modal-dialog uk-modal-body">
             <form>
-                <h2>Headline</h2>
+                <h2 class="uk-modal-title">Headline</h2>
                 <input type="text">
-                <p>
-                    <button type="button">Cancel</button>
-                    <button type="button">Save</button>
+                <p class="uk-text-right">
+                    <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                    <button class="uk-button uk-button-primary" type="button">Save</button>
                 </p>
             </form>
         </div>

@@ -11,23 +11,24 @@
 <!-- UIkit JS -->
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit-icons.min.js"></script>
-    <title>TECH BLOG</title>
+    <title>Assignment 14 - Tech Blog</title>
 </head>
 <body style="background-color: cadetblue; padding-bottom: 25px;">
  <header>
         {{#if loggedIn}}
-          <nav>
-            <div>
 
-                <ul>
-                    <li><a href="/home">Home</a> </li>
-                    <li><a href="/dashboard">Dashboard</a></li>
-                    <li> <a  href="/api/users/logout">Logout</a></li>
-                    <li> <p>Hello, {{username}}!</p></li>
-                </ul>
+            <nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
 
-            </div>
-          </nav>
+        <ul class="uk-navbar-nav">
+            <li class="uk-active"><a href="/home">Home</a> </li>
+            <li class="uk-active"><a href="/dashboard">Dashboard</a></li>
+            <li class="uk-active"> <a  href="/api/users/logout">Logout</a></li>
+            <li class="uk-position-center uk-text-middle uk-text-large" style="margin-top: 1%; font-size:30px; font-weight: 900px !important"> <p>Hello, {{username}}!</p></li>
+        </ul>
+
+    </div>
+</nav>
         {{else}}
     <script>function notLogged(){location.replace("login")}</script>
         {{/if}}

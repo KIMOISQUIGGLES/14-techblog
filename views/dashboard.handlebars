@@ -1,43 +1,48 @@
-<form action="" id="newBlog">
-        <div>
-            <h3>
-                <div>
-                    <input type="text" placeholder="Blog Title" id="title">
+<h1 class="uk-heading-line uk-text-center" style="margin-bottom: 50px; padding-bottom:50px; margin-top: 3%"><span>Say
+        whats on your mind!</span></h1>
+
+<form action="" id="newBlog" class=" uk-align-center ">
+        <div class="sizeBlog uk-card uk-align-center uk-card-default uk-card-body uk-box-shadow-large">
+            <h3 class="uk-card-title">
+                <div class="uk-margin">
+                    <input class="uk-input uk-form-width-medium" type="text" placeholder="Blog Title" id="title">
                 </div>
             </h3>
-            <div>
-                <textarea placeholder="Textarea" style="resize: none"
+            <div class="uk-margin">
+                <textarea class="uk-textarea" cols="20" rows="10" placeholder="Textarea" style="resize: none"
                     id="body"></textarea>
             </div>
-            <button>Submit</button>
+            <button class="uk-button uk-button-default">Submit</button>
         </div>
 </form>
 
-<h1> YOUR BLOGS </h1>
+<h1 class="uk-heading-line uk-text-center" style="margin-bottom: 50px; padding-bottom:50px"><span>All your Blogs</span>
+</h1>
 
-<ul>
+<ul class="uk-grid-small  uk-child-width-1-1 uk-child-width-1-4@s" uk-sortable="handle: .uk-card" uk-grid
+    style="padding-left: 5% !important; padding-right: 5% !important">
     {{#each Blogs}}
     <li>
-        <div>
-            <h2>{{title}}</h2>
-            <hr>
+        <div class="uk-card uk-card-default uk-card-body">
+            <h2 class="uk-card-title uk-text-center" style="font-weight: bolder">{{title}}</h2>
+            <hr class="uk-divider-icon">
             <p style="word-wrap: break-word">{{body}}</p>
             <hr>
-            <div>
-                <buttontype="button" style="margin-top: -1%"
-                    uk-toggle="target: #updateModal">Update</buttontype=>
+            <div class="uk-flex">
+                <button class="uk-button uk-button-default uk-margin-small-right" type="button" style="margin-top: -1%"
+                    uk-toggle="target: #updateModal">Update</button>
                 <button class="uk-button uk-button-default delete" id={{id}}>Delete</button>
             </div>
             </form>
-            <div id="updateModal">
-                <div>
-                    <h2>{{this.title}}</h2>
+            <div id="updateModal" uk-modal>
+                <div class="uk-modal-dialog uk-modal-body">
+                    <h2 class="uk-modal-title">{{this.title}}</h2>
                     <p>{{body}}</p>
-                    <textarea type="text" id="updateText"
+                    <textarea class="uk-modal-" rows="10" cols="60" type="text" id="updateText"
                         style="resize: none"></textarea>
                     
-                        <button id={{id}}>Save</button>
-                        <button>Cancel</button>
+                        <button class="uk-button uk-button-primary update" id={{id}}>Save</button>
+                        <button class="uk-button uk-button-default uk-modal-close">Cancel</button>
                     
                 </div>
             </div>

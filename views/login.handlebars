@@ -1,38 +1,63 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
-
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="loginUsername">name:</label>
-        <input class="form-input" type="text" id="loginUsername" />
-      </div>
-      <div class="form-group">
-        <label for="loginPassword">password:</label>
-        <input class="form-input" type="password" id="loginPassword" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <h2>Signup</h2>
-
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-    </form>
-  </div>
+<div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
+    <div class="uk-width-1-1">
+        <div class="uk-container">
+            <div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
+                <div class="uk-width-1-1@m">
+                    <div
+                        class="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+                        <h3 class="uk-card-title uk-text-center">Please login here</h3>
+                        <form action="" id="login">
+                            <div class="uk-margin">
+                                <div class="uk-inline uk-width-1-1">
+                                    <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                    <input class="uk-input uk-form-large" placeholder="Enter Username"
+                                        id="loginUsername" type="text">
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <div class="uk-inline uk-width-1-1">
+                                    <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                                    <input class="uk-input uk-form-large" placeholder="Enter Password"
+                                        id="loginPassword" type="password">
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <button class="uk-button uk-button-primary uk-button-large uk-width-1-1">Login</button>
+                            </div>
+                            <div class="uk-text-small uk-text-center">
+                                New User? <a href="#signupModal" uk-toggle> Signup Here</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<script src="./js/login.js"></script>
+
+<div id="signupModal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">
+            <form acton="" id="signup">
+                <h1> Create a new Account below!</h1>
+                <div class="uk-margin">
+                    <div class="uk-inline">
+                        <span class="uk-form-icon" uk-icon="icon: user"></span>
+                        <input class="uk-input" placeholder="Username here" id="signupUsername" type="text" style="font-size: 25px">
+                    </div>
+                </div>
+
+                <div class="uk-margin">
+                    <div class="uk-inline uk-margin-bottom">
+                        <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                        <input class="uk-input" placeholder="Password here" id="signupPassword" style="font-size: 25px" type="password">
+                    </div>
+                </div>
+
+                <button class="uk-button uk-button-primary uk-position-bottom-center uk-margin-bottom">Create New Account</button>
+            </form>
+    </div>
+</div>
+
+<script src="/js/login.js"></script>

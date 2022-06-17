@@ -1,27 +1,28 @@
-<div>
-    <h1>{{post.title}}</h1>
-    <p>{{post.body}}</p>
+<div class="uk-text-center">
+    <h1 style="text-decoration: underline; margin-top: 5%">{{post.title}}</h1>
+    <p style="font-size: 20px; color: antiquewhite !important">{{post.body}}</p>
     <h6>Created On: {{post.createdAt}}</h6>
     <hr>
 </div>
-    <form style="margin-bottom: 50px">
+    <form class="uk-text-center" style="margin-bottom: 50px">
         <input type="hidden" name="blog-id" value="{{post.id}}" />
         <input id="commentInput" />
         <button type="submit" id="comment">comment</button>
     </form>
 
 
-<ul>
+<ul class="uk-grid-small  uk-child-width-1-1 uk-child-width-1-4@s" uk-sortable="handle: .uk-card" uk-grid
+    style="padding-left: 5% !important; padding-right: 5% !important">
 
 {{#if post.Comments}}
 {{#each post.Comments}}
         <li>
-            <div>
-                <hr>
+            <div class="uk-card uk-card-default uk-card-body">
+                <hr class="uk-divider-icon">
                 <h4 style="text-decoration: underline">UserId: #{{id}}</h4>
                 <p style="word-wrap: break-word; font-size: 30px" >{{commentBody}}</p>
                 <hr>
-                 <h6> Posted On: {{createdAt}}</h6>
+                <h6> Posted On: {{createdAt}}</h6>
             </div>
         </li>
     {{/each}}
